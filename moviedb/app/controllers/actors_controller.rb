@@ -3,7 +3,10 @@ class ActorsController < ApplicationController
         @actors = Actor.all
     end
     
-    
+    def show
+        @actor = Actor.find(params[:id])
+    end
+
     def edit
         @actor = Actor.find(params[:id])
     end
@@ -15,7 +18,6 @@ class ActorsController < ApplicationController
         else
             render 'edit'
         end
-        
     end
     
     

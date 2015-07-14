@@ -9,7 +9,7 @@
     </tr>
    <% @actors.each do |actor| %>
     <tr>
-        <td><%= link_to "#{actor.first_name} #{actor.last_name}", actor %> </td>
+        <td><%= link_to actor.name, actor %> </td>
         <td></td>
         <td></td>
         <td><%= link_to 'Edit', edit_actor_path(actor) %></td>
