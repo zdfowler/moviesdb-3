@@ -1,5 +1,10 @@
 class MoviesController < ApplicationController
     def index
+        @movies = Movies.all
+    end
+    
+    def show
+       @movie = Movie.find(params[:id])
     end
     
     def new
@@ -14,9 +19,6 @@ class MoviesController < ApplicationController
         redirect_to @movie
     end
     
-    def show
-       
-    end
     
     private 
     
