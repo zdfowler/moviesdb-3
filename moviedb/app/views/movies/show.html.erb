@@ -1,2 +1,15 @@
-<h1>Details about Movie</h1>
-
+<div class="panel-heading">
+    <h1 class="panel-title"><%= @movie.title %></h1>
+</div>
+<div class="panel-body">
+    <p>Rating: <%= @movie.rating %></p>
+    <p>Description: <%= @movie.description %></p>
+    
+    <h2>Cast</h2>
+    <ul>
+        <% @movie.roles.each do |role| %>
+            <li> <%= link_to role.actor.name, role.actor %> as <%= role.name %></li>
+        <% end %>
+    </ul>
+    <p><%= link_to 'Add Cast Member', new_movie_role_path(@movie), :class=>'btn btn-primary' %></p>
+</div>
